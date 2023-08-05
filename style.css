@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.container {
+  font-family: sans-serif;
+  width: 50%;
+  margin: 40px auto;
+  text-align: center;
+}
+
+header {
+    background-color: white;
+    opacity: 0.6;
+    width: 350px;
+    margin: auto;
+    padding: 15px;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+header h3 {
+  margin: 3rem 0;
+  font-weight: 200;
+}
+
+header button {
+  cursor: pointer;
+  border: none;
+  padding: 0.5rem 1rem;
+  background: green;
+}
+
+header button:hover {
+  background-color: darkgreen;
+}
+
+.game-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+}
+
+.dirt {
+  position: relative;
+  margin: 2rem 0.5rem;
+  margin-top: 5rem;
+  height: 6rem;
+  width: 30%;
+  background-size: cover;
+}
+
+.dirt::after {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: url("./dirt.png") center no-repeat;
+  background-size: cover;
+}
+
+.mole {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5.5rem;
+    background: url("mole.png") center no-repeat;
+    background-size: contain;
+    transition: all 0.3s ease;
+}
+
+.mole.chosen {
+  top: -3rem;
+}
+
+#süre {
+  background-color: white;
+  opacity: 0.6;
+  position: absolute;
+  right: 15%;
+  top: 15%;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.place {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 110%;
+  height: 110%;
+  z-index: -4;
+}
+
+.air {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 110%;
+  height: 150%;
+  z-index: -5;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    width: 70%;
+  }
+  .dirt {
+    position: relative;
+    width: 30%;
+  }
+  #süre {
+    right: 5%;
+    top: 20%;
+    border-bottom: 1px solid black;
+    font-size: 1.2rem;
+  }
+}
+
+#custom-cursor {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px; /* Görselin genişliği */
+  height: 30px; /* Görselin yüksekliği */
+  pointer-events: none;
+  z-index: 9999;
+}
